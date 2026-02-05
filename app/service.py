@@ -55,9 +55,8 @@ class UnboundService:
         Validates the output based on criteria.
         """
         if criteria.type == "contains":
-            if not criteria.value: 
-                return True # Pass if no value set
-            
+            if not criteria.value:
+                return True
             logger.info(f"Validating 'contains': Value='{criteria.value}' in Output='{output[:50]}...'?")
             found = criteria.value.lower() in output.lower()
             logger.info(f"Result: {found}")
